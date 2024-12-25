@@ -1,0 +1,10 @@
+--- 
+const { slug, text } = Astro.props;
+---
+
+<a href={slug} class="bg-primary pl-6 pr-4 py-3 rounded-3 text-white inline-flex items-center gap-2 capitalize rounded-md transition-all duration-300 hover:bg-dark hover:text-white group">
+    { text }
+    <svg class="transition-all duration-300 group-hover:translate-x-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 18l6-6l-6-6" />
+    </svg>
+</a>
