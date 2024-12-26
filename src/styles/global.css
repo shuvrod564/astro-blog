@@ -4,9 +4,10 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 body { font-family: 'Poppins', sans-serif;color: #6D6E76; }
-.container { @apply mx-auto 2xl:max-w-[1400px]; }
+.container { @apply mx-auto 2xl:max-w-[1400px] px-5; }
 a, button { @apply transition-all duration-300 }
 
 
@@ -18,3 +19,5 @@ a, button { @apply transition-all duration-300 }
     -webkit-box-orient: vertical;
     white-space: normal; 
 }
+
+.link { @apply text-primary font-semibold hover:text-dark }

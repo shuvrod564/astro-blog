@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
 import Heading2 from '../components/Heading2.astro';
+import PostInfo from '../components/PostInfo.astro';
+import Category from '../components/Category.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -53,23 +55,144 @@ import Heading2 from '../components/Heading2.astro';
 								>
 							</a>
 							<div class="pt-4">
+								<PostInfo />
 								<h3 class=" text-xl md:text-2xl font-semibold mb-4">
 									<a href="#" class="text-dark hover:text-primary">
 										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
 									</a>
 								</h3>
-								<p class="ellipsis">
+								<p class="ellipsis mb-4">
 									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero corrupti delectus amet, ratione laboriosam expedita, sed odio voluptas necessitatibus alias, nulla soluta ex eaque molestiae veritatis minima quasi fuga. Fugiat dolorem quos doloremque pariatur iure.
 								</p>
+								<Button 
+									slug="#"
+									text="Read more"
+								/>
 							</div>
 						</div>
-					</div>
-				</div>
+					</div><!-- /.col -->
+
+					<div class="w-full lg:w-[40%] lg:pl-5">
+						<div class="flex items-center justify-between mb-5 lg:mb-6">
+							<Heading2 
+								title="All Post"
+								className="!mb-0"
+							/>
+							<a href="#" class="text-primary font-medium underline hover:text-dark hover:no-underline">View All</a>
+						</div>
+
+						<ul class=""> 
+							<li class="p-4 rounded-md transition-all duration-300 hover:bg-slate-50">
+								<PostInfo />
+								<h3 class=" text-lg lg:text-xl font-semibold mb-4">
+									<a href="#" class="text-dark hover:text-primary">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+									</a>
+								</h3> 
+							</li>
+							<li class="p-4 rounded-md transition-all duration-300 hover:bg-slate-50">
+								<PostInfo />
+								<h3 class=" text-lg lg:text-xl font-semibold mb-4">
+									<a href="#" class="text-dark hover:text-primary">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+									</a>
+								</h3> 
+							</li>
+							<li class="p-4 rounded-md transition-all duration-300 hover:bg-slate-50">
+								<PostInfo />
+								<h3 class=" text-lg lg:text-xl font-semibold mb-4">
+									<a href="#" class="text-dark hover:text-primary">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+									</a>
+								</h3> 
+							</li>
+							<li class="p-4 rounded-md transition-all duration-300 hover:bg-slate-50">
+								<PostInfo />
+								<h3 class=" text-lg lg:text-xl font-semibold mb-4">
+									<a href="#" class="text-dark hover:text-primary">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+									</a>
+								</h3> 
+							</li>
+							<li class="p-4 rounded-md transition-all duration-300 hover:bg-slate-50">
+								<PostInfo />
+								<h3 class=" text-lg lg:text-xl font-semibold mb-4">
+									<a href="#" class="text-dark hover:text-primary">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+									</a>
+								</h3> 
+							</li>
+							 
+						</ul>
+					</div><!-- /.col -->
+				</div><!-- /.flex -->
 
 
 
 			</div>
 		</section>
+
+		<!-- about wrapper start -->
+		<section class="pb-10">
+			<div class="container">
+				<div class="bg-gradient p-4 lg:p-10 2xl:p-16 relative">
+					<div class=" absolute top-0 left-0 w-full h-2 bg-primary"></div>
+					<div class="grid gap-5 lg:gap-10 grid-cols-1 md:grid-cols-2">
+						<div>
+							<p class="text-dark uppercase mb-3">About Us</p> 
+							<Heading2 
+								title="We are a community of content writers who share their learnings"
+							/>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+							</p>
+							<div class="mt-4">
+								<a href="#" class="link">Read More ></a>
+							</div>
+						</div>
+						<div>
+							<p class="text-dark uppercase mb-3">Our mision</p> 
+							<h3 class="text-xl md:text-2xl text-dark font-semibold mb-4">Creating valuable content for creatives all around the world</h3>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							</p> 
+						</div>
+					</div>
+				</div>
+			</div><!-- /.container -->
+		</section>
+		<!-- about wrapper end -->
+
+		<!-- category wrapper start -->
+		<Category /> 
+		<!-- category wrapper end -->
+
+		<!-- why we started wrapper start -->
+		<section class="py-10">
+			<div class="container">
+				<div class="relative">
+					<div class=" lg:w-3/4">
+						<img src="/images/why-we-started.webp" alt="why start">
+					</div>
+					<div class="absolute bottom-0 right-0 p-5 lg:p-10 bg-white lg:w-1/2">
+						<p class="text-dark uppercase font-medium mb-4">Why we started </p>
+						<Heading2
+							title="It started out as a simple idea and evolved into our passion"
+						/>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+						</p>
+						<div class="mt-5">
+							<Button 
+								slug="#"
+								text="Discover our story"
+							/>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.container -->
+		</section>
+		<!-- why we started wrapper end -->
 
 
 	</main>

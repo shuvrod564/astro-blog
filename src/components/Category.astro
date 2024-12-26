@@ -1,0 +1,40 @@
+---
+import Heading2 from "./Heading2.astro";
+ 
+
+const data = [
+    { title: 'Business', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.' },
+    { title: 'Startup', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.' },
+    { title: 'Economy', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.' },
+    { title: 'Technology', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.' },
+]
+
+---
+
+
+
+<div class="py-10">
+    <div class="container">
+        <Heading2  
+            title="Choose A Catagory"
+            className="text-center"
+        />
+
+
+        <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            {
+                data.map((item)=> { 
+                    
+                    return (
+                        <div>
+                            <div class="border p-4 md:p-5 transition-all duration-300 hover:bg-gradient">
+                                <h3 class="text-lg md:text-xl font-semibold text-dark mb-3">{item.title}</h3>
+                                <p class="text-sm lg:text-[15px]">{item.description}</p>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    </div><!-- /.container -->
+</div>

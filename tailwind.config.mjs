@@ -6,6 +6,8 @@ export default {
 			colors: {
 				primary: '#a54c9e',
 				dark: '#232536',
+				grey: '#4C4C4C',
+				gradient: '#F4F0F8',
 			}
 		},
 	},
