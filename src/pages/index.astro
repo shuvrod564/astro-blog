@@ -1,6 +1,7 @@
 --- 
 import Layout from '../layouts/Layout.astro';
 import Button from '../components/Button.astro';
+import Heading2 from '../components/Heading2.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -35,7 +36,40 @@ import Button from '../components/Button.astro';
 			</div>
 		</header>
 
+		<section class="py-20">
+			<div class="container">
+				<div class="flex flex-wrap flex-row">
+					<div class="w-full lg:w-[60%] lg:pr-5">
+						<Heading2 
+							title="Featured Post"
+						/>
 
+						<div class="border border-slate-300 p-4 rounded-md">
+							<a href="#" class="block">
+								<img 
+									src="/images/blog-thumb.jpg" 
+									alt="Blog image"
+									class="w-full rounded-md"
+								>
+							</a>
+							<div class="pt-4">
+								<h3 class=" text-xl md:text-2xl font-semibold mb-4">
+									<a href="#" class="text-dark hover:text-primary">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+									</a>
+								</h3>
+								<p class="ellipsis">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero corrupti delectus amet, ratione laboriosam expedita, sed odio voluptas necessitatibus alias, nulla soluta ex eaque molestiae veritatis minima quasi fuga. Fugiat dolorem quos doloremque pariatur iure.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</section>
 
 
 	</main>
