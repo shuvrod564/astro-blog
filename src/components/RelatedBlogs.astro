@@ -1,0 +1,75 @@
+---
+import Heading2 from "./Heading2.astro";
+import PostInfo from "./PostInfo.astro";
+
+const relatedBlogs = [
+    {
+        id: 1,
+        image: "/images/blog-thumb.jpg",
+        title: "The Future of Front-End Development: Trends to Watch",
+        description: "Explore the latest trends in front-end development, including cutting-edge frameworks, tools, and best practices to enhance your projects.",
+        author: "Shuvro Dev",
+        date: "2024-12-31",
+        slug: "future-of-frontend-development",
+        tags: ["Front-End", "Development", "Trends"],
+    },
+    {
+        id: 2,image: "/images/blog-thumb.jpg",
+        title: "Mastering Responsive Design with Tailwind CSS",
+        description: "Learn how to create stunning, responsive websites effortlessly using Tailwind CSS. A guide for beginners and professionals alike.",
+        author: "Shuvro Dev",
+        date: "2024-12-30",
+        slug: "responsive-design-with-tailwind",
+        tags: ["Tailwind CSS", "Responsive Design", "Web Development"],
+    },
+    {
+        id: 3,
+        image: "/images/blog-thumb.jpg",
+        title: "Boost Your Productivity with Next.js Best Practices",
+        description: "A deep dive into Next.js best practices for building high-performance, scalable, and maintainable web applications.",
+        author: "Shuvro Dev",
+        date: "2024-12-29",
+        slug: "nextjs-best-practices",
+        tags: ["Next.js", "Web Development", "Best Practices"],
+    },
+];
+---
+
+<section class="py-12 lg:py-16">
+    <div class="container">
+        <Heading2 title="What to read next" />
+
+        <ul class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {
+                relatedBlogs.map((blog) => (
+                    <li class="group">
+                        <a
+                            href={`/${blog.slug}`}
+                            class="block rounded-lg overflow-hidden group"
+                        >
+                            <img
+                                src={blog.image}
+                                alt={blog.title}
+                                class="rounded-lg transition-all duration-200 group-hover:scale-110"
+                            />
+                        </a>
+                        <div class="mt-4">
+                            <PostInfo type="small" />
+                            <h3 class="text-lg font-bold text-dark mt-2">
+                                <a
+                                    href={`/${blog.slug}`}
+                                    class="hover:text-primary hover:underline"
+                                >
+                                    {blog.title}
+                                </a>
+                            </h3>
+                            <p class="text-[#6D6E76] mt-2">
+                                {blog.description}
+                            </p>
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+    </div><!--.container -->
+</section>

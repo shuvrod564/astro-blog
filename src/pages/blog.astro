@@ -1,9 +1,179 @@
 ---
+import Button from "../components/Button.astro";
+import Heading2 from "../components/Heading2.astro";
+import PostInfo from "../components/PostInfo.astro";
 import Layout from "../layouts/Layout.astro";
+import Pagination from "../components/Pagination.astro";
+import Category from "../components/Category.astro";
+
+const blogPosts = [
+    {
+        id: 1,
+        slug: 'blog-detail',
+        title: "Design tips for designers that cover everything you need",
+        excerpt: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-07-01",
+        author: "John Doe",
+        category: "Design",
+    },
+    {
+        id: 2,
+        slug: 'blog-detail',
+        title: "How to build rapport with your web design clients",
+        excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-06-28",
+        author: "Jane Smith",
+        category: "Web Design",
+    },
+    {
+        id: 3,
+        slug: 'blog-detail',
+        title: "Top 10 Typefaces and Fonts for Professional Designers",
+        excerpt: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-06-25",
+        author: "Mike Johnson",
+        category: "Typography",
+    },
+    {
+        id: 4,
+        slug: 'blog-detail',
+        title: "The Importance of User Experience in Web Design",
+        excerpt: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-06-22",
+        author: "Emily Brown",
+        category: "UX Design",
+    },
+    {
+        id: 5,
+        slug: 'blog-detail',
+        title: "Color Theory Basics for Graphic Designers",
+        excerpt: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-06-19",
+        author: "Alex Turner",
+        category: "Graphic Design",
+    },
+    {
+        id: 6,
+        slug: 'blog-detail',
+        title: "The Role of AI in Modern Web Development",
+        excerpt: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-06-16",
+        author: "Sarah Lee",
+        category: "Technology",
+    },
+    {
+        id: 7,
+        slug: 'blog-detail',
+        title: "Responsive Design: Crafting Websites for All Devices",
+        excerpt: "Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-06-13",
+        author: "Chris Wilson",
+        category: "Web Development",
+    },
+    {
+        id: 8,
+        slug: 'blog-detail',
+        title: "The Art of Logo Design: Creating Memorable Brand Identities",
+        excerpt: "Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.",
+        image: "/images/blog-thumb.jpg",
+        date: "2023-06-10",
+        author: "Lisa Anderson",
+        category: "Branding",
+    },
+];
 ---
 
+<Layout title="Blogs">
+    <!-- featured blog -->
+    <div class="py-20 bg-gradient">
+        <div class="container">
+            <div class="grid gap-5 grid-cols-1 lg:grid-cols-2">
+                <div>
+                    <p class="text-dark uppercase mb-5">Featured Post</p>
+                    <h1 class="text-2xl md:text-3xl font-bold text-dark mb-4">
+                        Step-by-step guide to choosing great font pairs
+                    </h1>
+                    <PostInfo />
+                    <p class="mb-4">
+                        Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur.
+                        Excepteur sint occaecat cupidatat non proident.
+                    </p>
+                    <Button slug="/blog-detail/" text="Read more" />
+                </div>
+                <div>
+                    <a href="/blog-detail/" class="block rounded-lg overflow-hidden group">
+                        <img
+                            src="/images/blog-hero-thumb.jpg"
+                            alt=""
+                            class="rounded-lg transition-all duration-200 group-hover:scale-110"
+                        />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- featured blog -->
 
-<Layout title="About Page">
+    <!-- list wrapper start -->
+    <section class="py-12 md:py-20">
+        <div class="container">
+            <Heading2 title="All posts" />
+            <ul class="flex flex-col gap-5 md:gap-10">
+                {
+                    blogPosts.map((post) => (
+                        <li class="flex flex-row items-center">
+                            <div class="w-1/3">
+                                <a
+                                    href={`/${post.slug}`}
+                                    class="block rounded-lg overflow-hidden group"
+                                >
+                                    <img
+                                        src={post.image}
+                                        alt={post.title}
+                                        class="rounded-lg transition-all duration-200 group-hover:scale-110 aspect-[16/10] w-full h-full"
+                                    />
+                                </a>
+                            </div>
+                            <div class="w-2/3 pl-5">
+                                <PostInfo
+                                    date={post.date}
+                                    author={post.author}
+                                    category={post.category}
+                                />
+                                <h3 class="text-xl md:text-2xl lg:text-3xl font-bold mb-4">
+                                    <a
+                                        href={`/blog/${post.slug}`}
+                                        class="text-dark hover:text-primary hover:underline"
+                                    >
+                                        {post.title}
+                                    </a>
+                                </h3>
+                                <p>{post.excerpt}</p>
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
 
-    <h1>Blog page</h1>
+            <!-- pagination -->
+             <Pagination />
+        </div>
+    </section>
+
+
+    <!-- category wrapper start -->
+    <Category /> 
+    <!-- category wrapper end -->
+
+
+
 </Layout>
+<!-- list wrapper end -->

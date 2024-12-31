@@ -1,8 +1,12 @@
+---
+
+const { type ='' } = Astro.props;
+
+---
 
 
-
-<div class="flex items-center gap-3 mb-2 small font-medium text-grey">
-    <div class="inline-flex items-center gap-2">
+<div class={`flex items-center gap-3 mb-2 small  text-grey ${type === 'small' ? 'text-sm' : 'text-base font-medium'}`}>
+    <div class="inline-flex items-center gap-1">
         <span>By</span>
         <a href="#" class="text-primary">Shuvro Dev</a>
     </div>
