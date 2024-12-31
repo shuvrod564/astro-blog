@@ -10,7 +10,7 @@ const relatedBlogs = [
         description: "Explore the latest trends in front-end development, including cutting-edge frameworks, tools, and best practices to enhance your projects.",
         author: "Shuvro Dev",
         date: "2024-12-31",
-        slug: "future-of-frontend-development",
+        slug: "/blog-detail/",
         tags: ["Front-End", "Development", "Trends"],
     },
     {
@@ -19,7 +19,7 @@ const relatedBlogs = [
         description: "Learn how to create stunning, responsive websites effortlessly using Tailwind CSS. A guide for beginners and professionals alike.",
         author: "Shuvro Dev",
         date: "2024-12-30",
-        slug: "responsive-design-with-tailwind",
+        slug: "/blog-detail/",
         tags: ["Tailwind CSS", "Responsive Design", "Web Development"],
     },
     {
@@ -29,7 +29,7 @@ const relatedBlogs = [
         description: "A deep dive into Next.js best practices for building high-performance, scalable, and maintainable web applications.",
         author: "Shuvro Dev",
         date: "2024-12-29",
-        slug: "nextjs-best-practices",
+        slug: "/blog-detail/",
         tags: ["Next.js", "Web Development", "Best Practices"],
     },
 ];
@@ -44,7 +44,7 @@ const relatedBlogs = [
                 relatedBlogs.map((blog) => (
                     <li class="group">
                         <a
-                            href={`/${blog.slug}`}
+                            href={`${blog.slug}`}
                             class="block rounded-lg overflow-hidden group"
                         >
                             <img
@@ -57,7 +57,7 @@ const relatedBlogs = [
                             <PostInfo type="small" />
                             <h3 class="text-lg font-bold text-dark mt-2">
                                 <a
-                                    href={`/${blog.slug}`}
+                                    href={`${blog.slug}`}
                                     class="hover:text-primary hover:underline"
                                 >
                                     {blog.title}
